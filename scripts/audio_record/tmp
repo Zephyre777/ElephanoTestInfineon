@@ -1,0 +1,21 @@
+from machine import PDM_PCM, Pin
+
+mic = PDM_PCM(
+    0,
+    sck=Pin("P8_5"),
+    data=Pin("P8_6"),
+    sample_rate=16000,
+    decimation_rate=64,
+    bits=PDM_PCM.BITS_16,
+    format=PDM_PCM.STEREO,
+    left_gain=0
+)
+
+>>> PDM_PCM(0, sck=Pin("P8_5"), data=Pin("P8_6"),)
+PDM_PCM(id=3,
+sample_rate=16000,
+decimation_rate=96,
+bits=16,
+format=0,
+left_gain=0,
+right_gain=0)
